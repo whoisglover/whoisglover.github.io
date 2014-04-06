@@ -8,12 +8,20 @@
 }
 
 #content-area {
+	
 	text-align: center;
-	padding: 5px 10px;
 	border: 1px dashed #000000;
 	margin: auto;
-	width: 600px;
-	height: 400px;
+	width: 650px;
+	height: 540px;
+}
+
+#main {
+	float:right;
+	
+	width: 530px;
+	height: 100%;
+
 }
 
 #footer {
@@ -21,9 +29,22 @@
 	border: 1px solid #000000;
 	margin:auto;
 	margin-top: 20px;
+	/*position: absolute;*/
+	bottom: 0;
 	width: 800px;
 	height: 50px;
 	padding: 10px;
+
+}
+
+#sidebar {
+	/*position: absolute;*/
+	bottom:-55px;
+	float:left;
+	width: 100px;
+	height: 95%;
+	
+	border: 2px solid black;
 
 }
 .yellow {
@@ -36,8 +57,24 @@
 	color:blue;
 }
 
- a:link	{color:#FF0000;} /* unvisited link */
- a:visited	{color:#00FF00;} /* visited link */
- a:hover	{color:#FF00FF;} /* mouse over link */
- a:active	{color:#0000FF;} /* selected link */
+.image {
+	border: 4px solid navy;
+	padding: 5px;
+	margin: auto;
+
+
+}
+.caption {
+	position: absolute;
+	font-weight: bold;
+	color:white;
+	top:400px;
+	right:600px;
+	background-color: navy;
+}
+
+ a:link		{color:red;} /* unvisited link */
+ a:visited	{color:gray;} /* visited link */
+ a:hover	{color:orange;} /* mouse over link */
+ a:active	{color:purple;} /* selected link */
 
