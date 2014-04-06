@@ -1,0 +1,42 @@
+
+
+p {
+
+	font-family: "Arial", sans-serif;
+	/*color: white;
+	background-color: grey;*/
+
+}
+
+p em, strong{
+
+	color:red;
+}
+
+.list {
+	background-color: grey;
+	color:yellow;
+}
+
+#hello {
+
+	color: red;
+}
+
+#hola {
+
+	color: blue;
+}
+
+#bonjour {
+
+	color: lime;
+}
+#ciao {
+
+	color: teal;
+}
+#hallo {
+
+	color: purple;
+}
