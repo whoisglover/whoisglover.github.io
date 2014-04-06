@@ -1,5 +1,4 @@
 
-
 #header {
 	text-align: center;
 	font-weight: bold;
@@ -29,7 +28,6 @@
 	border: 1px solid #000000;
 	margin:auto;
 	margin-top: 20px;
-	/*position: absolute;*/
 	bottom: 0;
 	width: 800px;
 	height: 50px;
@@ -38,15 +36,14 @@
 }
 
 #sidebar {
-	/*position: absolute;*/
 	bottom:-55px;
 	float:left;
 	width: 100px;
 	height: 95%;
-	
 	border: 2px solid black;
 
 }
+
 .yellow {
 
 	color:yellow;
@@ -73,8 +70,8 @@
 	background-color: navy;
 }
 
- a:link		{color:red;} /* unvisited link */
- a:visited	{color:gray;} /* visited link */
- a:hover	{color:orange;} /* mouse over link */
- a:active	{color:purple;} /* selected link */
+ a:link		{color:red;} 
+ a:visited	{color:gray;}
+ a:hover	{color:orange;}
+ a:active	{color:purple;} 
 
