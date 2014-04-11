@@ -1,5 +1,5 @@
 html { 
-  background: url(../images/puppy.jpg) no-repeat center center fixed; 
+  background: url(../images/canal.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -101,9 +101,11 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	color:#ffe40f;
 	top: 0;
-	
-	margin-top: %;
+	margin-top: 6%;
 }
+
+
+
 
 #right .links{
 	font-size: 16px;
