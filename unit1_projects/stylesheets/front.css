@@ -1,5 +1,5 @@
 html { 
-  background: url(../images/puppy.jpg) no-repeat center center fixed; 
+  background: url(../images/canal.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -96,13 +96,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #right #title{
-	font-size: 18px;
+	font-size: 19px;
 	position: relative;
 	text-align: center;
 	color:#ffe40f;
 	top: 0;
-	margin: 0;
-	margin-top: 5%;
+	
+	margin-top: %;
 }
 
 #right .links{
@@ -110,6 +110,14 @@ h1, h2, h3, h4, h5, h6 {
 	position: relative;	
 	color:white;
 	left:5px;
+}
+
+#right a{
+	font-size: 14px;	
+	text-decoration: none;
+}
+#right a:hover{
+	color:#ffe40f;
 }
 
 #right_box{
