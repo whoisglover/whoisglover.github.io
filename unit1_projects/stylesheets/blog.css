@@ -98,7 +98,9 @@ h1, h2, h3, h4, h5, h6 {
 #right p {
 	padding: 10px;
 }
-
+#right li {
+	padding: 10px;
+}
 #right #title{
 	font-family: 'Cinzel';
 	font-size: 19px;
