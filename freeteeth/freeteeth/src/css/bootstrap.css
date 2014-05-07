@@ -7057,3 +7057,6 @@ td.visible-print {
     display: none !important;
   }
 }
+.spacer {
+    margin-top: 100px; /* define margin as you see fit */
+}
