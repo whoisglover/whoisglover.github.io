@@ -110,7 +110,113 @@
 
 
 
-					  	<br><h4 class="text-success">More coming soon!</h4>
+					  <h3>Instructions</h3>
+					  This pipeline allows for approximate manipulation of a 3D dental molds intended for self-empowered teeth correction. <br>
+
+This pipeline is a work in progress and not intended for medical use (at least in the immediate future). <br>
+
+Results are directly proportional to the quality of mold used (technique in mold preparation, casting, and digitizing)<br>
+
+<h5>Minimum requirements:</h5>
+<ul>
+<li>Blender 2.7</li>
+<li>Meshlab v1.3.3</li>
+<li>Autodesk Meshmixer v2p3</li>
+<li>Mac OS X 10.7+</li>
+</ul>
+<br>
+<strong>NOTE:</strong> works on upper or lower one at a time. One must go through this workflow twice to generate both upper and lower retainers
+<br>
+<ol>
+<li>Crop extraneous dental features from the mold</li>
+		<ul>
+		<li>Open file in meshlab</li>
+		<li>Edit>Manipulators Tools</li>
+		<li>Rotate and translate the object such that the tooth mold allows for a right angle to be cropped (see Fig. 1)<br>
+		<strong>Hint:</strong> hold shift while rotating/translating in order to limit increments/decrements by one unit (instead of introducing lots of decimals) </li>
+		<li>Exit the Manipulators Tools by selecting it again in the edit menu</li>
+		<li>Edit->Filters>Selection>Select Faces in Rectangular Region</li>
+		<li>If necessary, re-orient the object on the XYZ axis with cmd+shift+h, or retranslate it according to Fig. 1 with Manipulators tool</li>
+		<li>Select regions to be croppped i) all at once, then select "Delete the current selected faces and all surrounding vertices" ii) sequentially for single delete by holding the alt button when selecting sequential sections iii) sequentially with several delete events</li>
+		<li>Export the mesh as a .stl file</li>
+	</ul>
+<li>Isolate teeth using meshlab script</li>
+<ul>
+	<li>Open up cropped model in meshlabs</li>
+	<li>Filters>Show current filter script>Open Script>step2.mlx>Apply script</li>
+	<li>Export mesh as stl or ply file format (no preference). Keep default selection</li>
+
+	<li>Currenty unworking command
+/Applications/meshlab.app/Contents/MacOS/meshlabserver -i INPUTFILE -o OUTPUTFILE -s step2.mlx</li>
+</ul>
+
+<li>Create seperate mesh objects within Blender</li>
+<ul>
+	<li>Import the file from step 2 in a blender default scene</li>
+	<li>Translate and rotate object in blender until it is squarly within the xyz plane, preferably centered at the scene origin in positive space</li>
+	<li>Remove the camera, light and box auto-added to the scene</li>
+	<li>Select the imported mesh object</li>
+	<li>Go to edit mode</li>
+	<li>Press "P" and select "loose objects"</li>
+	<li>Note the explosion of meshes in the outliner view, which is located in the top right corner by default. Each seperate mesh object will be appended with a number after its file name such as inputSTL.001, inputSTL.002, ect.</li>
+</ul>
+<li>Optional: if two teeth are not exploded, open the output file of step 2 in meshlabs and use the selection and deletion methods through i), ii), and iii) to seperate any tooth fragments resulting from poor input model. Repeat step 3.</li>
+
+<li>Remove acessory exploded meshes</li>
+<ul><li>Go through each exploded mesh in the template view and select it. If the selection does not appear to be the gums or the tooth, delete the object.</li></ul>
+
+<li>Select each tooth, one-by-one, and prepare for straightening</li>
+<ul>
+	<li>On a selected tooth, go to object mode>object>transform>Move origin to geometry to correct the pivot point for translation and rotation in the straightening process</li>
+	<li>Once all teeth's pivot points corrected, animate the teeth</li>
+</ul>
+
+<li>Straighten by means of animation</li>
+<ul>
+		<li>Go to the animation tab</li>
+		<li>For each tooth from front-to-back:</li>
+		<li>Scrub the animation timeline to time zero and select insert frame>locrot</li>
+		<li>Scrub the animation timeline to time 250 (default period).</li>
+		<li>Rotate and translate the object through the transform panel on the right hand of the screen.</li>
+		<li>Once satisfactory alignment has been attained, insert another animation frame>locrot</li>
+		<li>Play the animation to ensure alignment results desirable</li>
+</ul>
+<li>Export mesh for retainer generation</li>
+<ul>
+	<li>Segment animation timeline into retainer regimen, according to severity of teeth repositioning. A recommended regimen is at least 8 retainers over a one year period.</li>
+	<li>Scrub the timeline each segment, selecting all of the teeth in the template view each time while using the shift key (do not select the gums), and click file>export>stl file format</li>
+</ul>
+
+<li>Generate retainer shapes one-by-one in Meshlabs</li>
+<ul>
+	<li>For each output file of step 8, perform the following steps in meshlab (or use step9.mlx same as step2.mlx)</li>
+	<li>Filters>Remeshing, simplification and construction>surface reconstruction:Poisson</li>
+	<li>Enter Octal tree: 7, Solver divide: 8</li>
+	<li>Filters>Remeshing, simplification and construction>Sudivision surfaces: butterfly divide</li>
+	<li>Enter iterations: 5, Perc on: 0.5</li>
+	<li>Filters>Remeshing, simplification and construction>Quadratic Edge Collapse Decimation</li>
+	<li>Select "preserve boundary of the mesh" and "planar simplification"</li>
+	<li>Filters>Remeshing, simplification and construction>Uniform Mesh Resampling</li>
+	<li>Enter perc on: 1, Offset 0.7 (for 0.7mm thick wall)</li>
+	<li>Select "clean vertices" and "multisample"</li>
+	<li>Remove original mesh and simply retain the poisson reconstruction and the uniform resampling (this is now a retainer object with a wall inside, but we need to now cut it so that it remains water-tight in another program since meshlabs doesn't support this operation)</li>
+	<li>Merge the visible meshes into the same mesh</li>
+	<li>Export mesh</li>
+</ul>
+
+<li>Cut the the retainers in Autocad Meshmixer</li>
+<ul>
+	<li>Rotation horrible in this software, so be patient</li>
+	<li>Use the cut on plane tool and make sure none of the letters on the translate tool are highlighted (they snap the plane translation to large increments)</li>
+	<li>Place the plane at the center of the retainer, choose to "cut" with "delauny fill"</li>
+	<li>Export final stl for printing</li>
+	<li>Inspect for satisfaction in meshlab</li>
+</ul>
+</ol>
+
+
+
+					  
 
 										</p>
 
