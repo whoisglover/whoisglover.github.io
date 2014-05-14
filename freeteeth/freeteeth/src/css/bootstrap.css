@@ -6513,7 +6513,9 @@ button.close {
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #ffffff;
+
+
+  color: #4c587b;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
@@ -7059,4 +7061,10 @@ td.visible-print {
 }
 .spacer {
     margin-top: 100px; /* define margin as you see fit */
+}
+
+#footer{
+  height:60px;
+  background-color: #f5f5f5;
+
 }
