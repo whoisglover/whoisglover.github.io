@@ -5193,6 +5193,7 @@ a.list-group-item.active > .badge,
   line-height: 2.1428571435;
   color: inherit;
   background-color: #eeeeee;
+  opacity: 0.8;
 }
 
 .jumbotron h1 {
@@ -7060,7 +7061,7 @@ td.visible-print {
   }
 }
 .spacer {
-    margin-top: 100px; /* define margin as you see fit */
+    margin-top: 70px; /* define margin as you see fit */
 }
 
 #footer{
