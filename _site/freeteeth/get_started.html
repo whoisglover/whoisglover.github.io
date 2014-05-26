@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>freeTeeth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">freeTeeth <i class="fa fa-home fa-fw"></i></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="get_started.html">Get Started</a>
+						</li>
+						<li>
+							<a href="methods_research.html">Methods & Research</a>
+						</li>
+							<li>
+							<a href="get_involved.html">Get Involved</a>
+						</li>
+
+						
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#foot"><i class="fa fa-phone"></i> Contact</a>
+						</li>
+						
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+			<div class="row clearfix">
+				<div class="col-md-2 column">
+				</div>
+				<div class="col-md-8 column">
+					<div class="page-header">
+						<h1>
+							Get Started <small></small>
+						</h1>
+					</div>
+					<p>
+						<h4>Required Materials</h4>
+
+
+				<ul>
+					<li><a href="http://www.ebay.com/itm/DENTAL-ALGINATE-REGULAR-SET-1-LB-MINT-FLAVOR-/161026771064?pt=LH_DefaultDomain_0&hash=item257df18878" target="blank">Dental Alginate</a></li>
+					<li><a href="http://www.ebay.com/itm/HYDROSTONE-GYPSUM-CEMENT-HYDROSTONE-20-Lbs-for-27-FREE-SHIPPING-/161291529775?pt=Model_RR_Trains&hash=item258db96e2f" target="blank">Gympsum Stone</a></li>
+					<li><a href="http://www.ebay.com/itm/80-Assorted-Plastic-Dental-Impression-Trays-/121338409706?pt=LH_DefaultDomain_0&hash=item1c405532ea" target="blank">Plastic Impression Tray</a></li>
+					<li><a href="http://www.ebay.com/itm/RITE-DENT-rubber-mixing-bowl-small-Dental-Emporium-/170847912927?pt=LH_DefaultDomain_0&hash=item27c75443df" target="blank">Rubber Mixing Bowl</a></li>
+					<li><a href="http://accu-cast.us/product/mix-in-bag-liquistone/" target="blank">Alternative Stone</a></li>
+				</ul>
+					
+					<h4>Tutorials for taking Impressions</h4>	
+					<ul>
+						<li><a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2813082/" target="blank">Alginate impressions: A practical perspective</a></li>
+					</ul>
+
+					<h4>3D Scanning</h4>
+					<p>Now that you have a positive dental mold it is time to scan it into a .STL file.  This is a standard file format for 3D scanning and printing.  3D scanning can be done at home if you have your own scanner or you can send your mold to a 3rd party to be scanned.  
+
+					
+
+
+
+					  </p>
+					  <h4>Graphics Software</h4>
+					  <ul>
+					  	<li><a href="http://www.blender.org/">Blender</a></li>
+					  	<li><a href="http://meshlab.sourceforge.net/">Meshlab</a></li>
+					  	<li><a href="http://gts.sourceforge.net/">GTS Library</a></li>
+					  </ul>	
+
+
+
+					  <h3>Instructions</h3>
+					  This pipeline allows for approximate manipulation of a 3D dental molds intended for self-empowered teeth correction. <br>
+
+This pipeline is a work in progress and not intended for medical use (at least in the immediate future). <br>
+
+Results are directly proportional to the quality of mold used (technique in mold preparation, casting, and digitizing)<br>
+
+<h5>Minimum requirements:</h5>
+<ul>
+<li>Blender 2.7</li>
+<li>Meshlab v1.3.3</li>
+<li>Autodesk Meshmixer v2p3</li>
+<li>Mac OS X 10.7+</li>
+</ul>
+<br>
+<strong>NOTE:</strong> works on upper or lower one at a time. One must go through this workflow twice to generate both upper and lower retainers
+<br>
+<ol>
+<li>Crop extraneous dental features from the mold</li>
+		<ul>
+		<li>Open file in meshlab</li>
+		<li>Edit>Manipulators Tools</li>
+		<li>Rotate and translate the object such that the tooth mold allows for a right angle to be cropped (see Fig. 1)<br>
+		<strong>Hint:</strong> hold shift while rotating/translating in order to limit increments/decrements by one unit (instead of introducing lots of decimals) </li>
+		<li>Exit the Manipulators Tools by selecting it again in the edit menu</li>
+		<li>Edit->Filters>Selection>Select Faces in Rectangular Region</li>
+		<li>If necessary, re-orient the object on the XYZ axis with cmd+shift+h, or retranslate it according to Fig. 1 with Manipulators tool</li>
+		<li>Select regions to be croppped i) all at once, then select "Delete the current selected faces and all surrounding vertices" ii) sequentially for single delete by holding the alt button when selecting sequential sections iii) sequentially with several delete events</li>
+		<li>Export the mesh as a .stl file</li>
+	</ul>
+<li>Isolate teeth using meshlab script</li>
+<ul>
+	<li>Open up cropped model in meshlabs</li>
+	<li>Filters>Show current filter script>Open Script>step2.mlx>Apply script</li>
+	<li>Export mesh as stl or ply file format (no preference). Keep default selection</li>
+
+	<li>Currently unworking command
+/Applications/meshlab.app/Contents/MacOS/meshlabserver -i INPUTFILE -o OUTPUTFILE -s step2.mlx</li>
+</ul>
+
+<li>Create seperate mesh objects within Blender</li>
+<ul>
+	<li>Import the file from step 2 in a blender default scene</li>
+	<li>Translate and rotate object in blender until it is squarly within the xyz plane, preferably centered at the scene origin in positive space</li>
+	<li>Remove the camera, light and box auto-added to the scene</li>
+	<li>Select the imported mesh object</li>
+	<li>Go to edit mode</li>
+	<li>Press "P" and select "loose objects"</li>
+	<li>Note the explosion of meshes in the outliner view, which is located in the top right corner by default. Each seperate mesh object will be appended with a number after its file name such as inputSTL.001, inputSTL.002, ect.</li>
+</ul>
+<li>Optional: if two teeth are not exploded, open the output file of step 2 in meshlabs and use the selection and deletion methods through i), ii), and iii) to seperate any tooth fragments resulting from poor input model. Repeat step 3.</li>
+
+<li>Remove acessory exploded meshes</li>
+<ul><li>Go through each exploded mesh in the template view and select it. If the selection does not appear to be the gums or the tooth, delete the object.</li></ul>
+
+<li>Select each tooth, one-by-one, and prepare for straightening</li>
+<ul>
+	<li>On a selected tooth, go to object mode>object>transform>Move origin to geometry to correct the pivot point for translation and rotation in the straightening process</li>
+	<li>Once all teeth's pivot points corrected, animate the teeth</li>
+</ul>
+
+<li>Straighten by means of animation</li>
+<ul>
+		<li>Go to the animation tab</li>
+		<li>For each tooth from front-to-back:</li>
+		<li>Scrub the animation timeline to time zero and select insert frame>locrot</li>
+		<li>Scrub the animation timeline to time 250 (default period).</li>
+		<li>Rotate and translate the object through the transform panel on the right hand of the screen.</li>
+		<li>Once satisfactory alignment has been attained, insert another animation frame>locrot</li>
+		<li>Play the animation to ensure alignment results desirable</li>
+</ul>
+<li>Export mesh for retainer generation</li>
+<ul>
+	<li>Segment animation timeline into retainer regimen, according to severity of teeth repositioning. A recommended regimen is at least 8 retainers over a one year period.</li>
+	<li>Scrub the timeline each segment, selecting all of the teeth in the template view each time while using the shift key (do not select the gums), and click file>export>stl file format</li>
+</ul>
+
+<li>Generate retainer shapes one-by-one in Meshlabs</li>
+<ul>
+	<li>For each output file of step 8, perform the following steps in meshlab (or use step9.mlx same as step2.mlx)</li>
+	<li>Filters>Remeshing, simplification and construction>surface reconstruction:Poisson</li>
+	<li>Enter Octal tree: 7, Solver divide: 8</li>
+	<li>Filters>Remeshing, simplification and construction>Sudivision surfaces: butterfly divide</li>
+	<li>Enter iterations: 5, Perc on: 0.5</li>
+	<li>Filters>Remeshing, simplification and construction>Quadratic Edge Collapse Decimation</li>
+	<li>Select "preserve boundary of the mesh" and "planar simplification"</li>
+	<li>Filters>Remeshing, simplification and construction>Uniform Mesh Resampling</li>
+	<li>Enter perc on: 1, Offset 0.7 (for 0.7mm thick wall)</li>
+	<li>Select "clean vertices" and "multisample"</li>
+	<li>Remove original mesh and simply retain the poisson reconstruction and the uniform resampling (this is now a retainer object with a wall inside, but we need to now cut it so that it remains water-tight in another program since meshlabs doesn't support this operation)</li>
+	<li>Merge the visible meshes into the same mesh</li>
+	<li>Export mesh</li>
+</ul>
+
+<li>Cut the the retainers in Autocad Meshmixer</li>
+<ul>
+	<li>Rotation horrible in this software, so be patient</li>
+	<li>Use the cut on plane tool and make sure none of the letters on the translate tool are highlighted (they snap the plane translation to large increments)</li>
+	<li>Place the plane at the center of the retainer, choose to "cut" with "delauny fill"</li>
+	<li>Export final stl for printing</li>
+	<li>Inspect for satisfaction in meshlab</li>
+</ul>
+</ol>
+
+
+
+					  
+
+										</p>
+
+					<div class="row clearfix">
+						<div class="col-md-4 column">
+							
+						</div>
+						<div class="col-md-4 column">
+							
+						</div>
+						<div class="col-md-4 column">
+							
+						</div>
+					</div>
+					<p>
+					
+					</p>
+					
+				</div>
+				<div class="col-md-2 column">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="row spacer">
+ 		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+	</div>
+<div id ="foot" class="row clearfix" style="background:#f5f5f5">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-3 column">
+					 <address> <strong>freeTeeth</strong><br> University of Missouri<br> Columbia, MO 65201<br> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+				</div>
+				<div class="col-md-3 column">
+					<dl>
+						<dt>
+							Origin
+						</dt>
+						<dd>
+							This project was originally created by Danny Glover and David Schlessman at the University of Missouri.
+						</dd>
+
+					</dl>
+				</div>
+				<div class="col-md-3 column">
+					<strong>Contact Us:</strong>
+					<ul>
+						<li>
+							Danny Glover<br>555-555-5555<br>
+							dglover@gmail.com
+						</li>
+						<li>
+							David Schlessman<br>555-555-5555<br>
+							email@gmail.com
+						</li>
+											
+					</ul>
+				</div>
+				<div class="col-md-3 column">
+					<blockquote>
+						<p>
+							Software built on pride and love of subject is superior to software built for profit.
+
+						</p> <small>Ravi  Simhambhatla, CIO, Virgin America <cite></cite></small>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+</body>
+</html>

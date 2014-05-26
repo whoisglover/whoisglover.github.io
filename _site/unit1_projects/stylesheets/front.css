@@ -1,0 +1,140 @@
+html { 
+  background: url(../images/rsz_canal.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a {
+
+	color:white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+	color: white;
+}
+
+#social {
+	width: 10%;
+	height: 6.5%;
+	background-color: none;
+	left:85%;
+	position: fixed;
+	top:0;
+}
+
+#social table {
+	/*background-color: #514749;*/
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	color:white;
+
+}
+
+#social table td{
+	text-align: center;
+	/*background: #514749;*/
+	margin: auto;
+	padding: 1.5px;
+	/*width: 33.333333%;*/
+	width: 25%;
+}
+
+#social a{
+	font-size: 150%;
+	
+}
+#social a:hover{
+	color: #ffe40f;
+	font-size: 200%;
+	
+}
+
+
+#left {
+	position: absolute;
+	height:100px;
+	width: 250px;
+	border: none;
+	background-color: #514749;
+	top:45%;
+	bottom: 25%;
+	left:0;
+}
+#left p{
+	font-size: 18px;
+	/*font-size: 110%;*/
+	position: relative;
+	text-align: center;
+	font-family: 'Cinzel';
+	color:white;
+	top: 0;
+	margin: 0;
+	margin-top: 10%;
+	
+}
+#left #san_fran {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	color:#ffe40f;
+}
+
+#right {
+	position: absolute;
+	height: 335px;
+	width: 250px;
+	border: none;
+	font-family: 'Cinzel';
+	background-color: #514749;
+	top:45%;
+	right:100px;
+
+}
+
+#right #title{
+	font-size: 19px;
+	position: relative;
+	text-align: center;
+	color:#ffe40f;
+	top: 0;
+	margin-top: 6%;
+}
+
+
+
+
+#right .links{
+	font-size: 16px;
+	position: relative;	
+	color:white;
+	left:5px;
+}
+
+#right a{
+	font-size: 14px;	
+	text-decoration: none;
+}
+#right a:hover{
+	color:#ffe40f;
+}
+
+#right_box{
+	position: absolute;
+	height:100px;
+	width: 100px;
+	background-color: #ffe40f;	
+	top:45%;
+	right:0;
+}
+
+#right_box p{
+
+	text-align: center;
+	color: #514749;
+	margin-top: 30%;
+	font-size: 220%;
+}

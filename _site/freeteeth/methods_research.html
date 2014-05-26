@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>freeTeeth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- commentFav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="index.html">freeTeeth <i class="fa fa-home fa-fw"></i></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="get_started.html">Get Started</a>
+						</li>
+						<li>
+							<a href="methods_research.html">Methods & Research</a>
+						</li>
+							<li>
+							<a href="get_involved.html">Get Involved</a>
+						</li>
+
+						
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#foot"><i class="fa fa-phone"></i> Contact</a>
+						</li>
+						
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+			</nav>
+			<div class="row clearfix">
+				<div class="col-md-2 column">
+				</div>
+				<div class="col-md-8 column">
+					<div class="page-header">
+						<h1>
+							Methods & Research <small></small>
+						</h1>
+					</div>
+					<p>
+						<h4>Positive Mold</h4><br>
+
+First, one’s negative teeth mold is taken in alginate material. A positive mold, created with ground stone plaster material, is crafted in order to create a digital representation in a .STL file format. Digitization is performed by a MakerBot digitizer using Makerware. <br>
+
+<p><br><img alt="300x200" src="img/mold.jpg" style="width:700px"> </p><br>
+
+<h4> Scanning</h4><br>
+Scanning of the positive is done with a Makerbot Digitizer.  We have found that the higher resolution the scan the better the results.  The file output .STL is desired.
+
+<p><br><img alt="140x140" src="img/scanning.jpg" style="width:700px;" /><br></p><br>	
+
+
+<h4>Graphic Manipulation </h4><br>
+<p><br><img alt="140x140" src="img/steps.png" style="width:700px;" /><br></p><br>	
+
+The first step in manipulating the teeth is to separate each individual tooth from the model so they can be adjusted individually.  This is a complex process and most of our work thus far has been conducting research and creating code to accomplish this step. We have been following the methods outlined in the paper by Yan et al.'s "Single-Tooth Modeling for 3D Dental Model" (2010).  The workflow is as follows:
+<ol>
+<li>Import .STL file into Blender</li>
+<li>Rotate/Translate to prepare for manipulation</li>
+<li>Cut/Crop any unneeded parts of the model</li>
+<li>Apply differential equation to filter valleys and curves</li>
+<li>Select Valleys</li>
+<li>Perform open and close morphological operation to find selected edge</li>
+<li>Use point trace method to interactively select regions between teeth and delete previously found fusion edges</li>
+<li>Fill in holes created in previous steps </li>
+</ol>
+Finding the valleys and curves in the model allows us to distinguish between natural tissue (gums) and the teeth themselves.  This also separates any teeth that seem to be connected in the model (fusion regions).  Applying an equation to the data to find the mean curvature and filter on a range allows us to find and highlight these valleys and curves.  Image below shows teeth after highlighting on this mean curvature. <br>
+		INSERT IMAGE WITH HIGHLIGHTING <br>	
+
+Teeth are still part of the larger model at this point but are now ready to be separated.  This is step is called ‘segmentation boundary extraction’ and uses vertex complexity to decide where to cut the tooth from surrounding material. From the paper we follow these instructions: <blockquote>
+∀i ∈ F′; let Cnei(i) denote the 1-ring neighborhood of vertex vi ordered counter clockwise. ∀k ∈ Cnei(i); if k ∈ F′ at the same time, we record Cnei(i)k = 1 or Cnei(i)k = 0. With the above assumption, the vertex complexity CP(i) of vi is defined as follows: </blockquote>
+
+<center><img src="img/cp.png" style="height:60px;"></center><br>
+
+				
+If CP(i) is greater than or equal to 4 the vertex v(i) is defined to be complex. If Cnei(i) is a subset of F’ (index set of vertices in feature/highlighted region) vertex v(i) is defined as center vertex. Again referencing the paper:	<br> 	 	 		<blockquote>
+The set of satellite vertices is denoted by FS, center vertices by FC, and complex vertices by FCP. Then, we obtain the set of candidate vertices FD  that will be removed as follows. 
+</blockquote>
+<center><img src="img/fd.png" style="height:60px;"></center><br>
+Vertices are removed from the candidate set FD one at a time and each vertex’s neighboring vertex complexity is recalculated directly after its removal.   FS , FC , FCP and FD are each updated. This is repeated until the ‘shape’ of the feature region stops changing.  Some additional pruning may be required and is further outlined in the paper “single-tooth modeling for 3d dental model”. Once this is complete we will have an accurate segment boundary that separates each tooth.  The teeth are then cut along that boundary to acquire individual models for each.  Segmentation boundary selection is where our current work is being conducted.  The math and programming involved are complex but we feel confident that it can and will be done.
+<br><br>
+Once this process is implemented the teeth can be translated and rotated individually to desired positions.  The actual translation and rotation of each tooth has fallen outside of the scope of this class project as time constraints did not allow us to get there.  This is a reason we will be adamantly  distributing this project to the open source community.  Having more team members will allow these next steps to be implemented faster as well as allow for outside editing of currently implemented procedures.
+					</p>
+					<br><br>
+					<div class="row clearfix">
+						<div class="col-md-4 column">
+							
+						</div>
+						<div class="col-md-4 column">
+							
+						</div>
+						<div class="col-md-4 column">
+							
+						</div>
+					</div>
+					<p>
+					
+					</p>
+					
+				</div>
+				<div class="col-md-2 column">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="row spacer">
+ 		  <div class="span4"></div>
+   		  <div class="span4"></div>
+   		  <div class="span4"></div>
+	</div>
+<div id ="foot" class="row clearfix" style="background:#f5f5f5">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-3 column">
+					 <address> <strong>freeTeeth</strong><br> University of Missouri<br> Columbia, MO 65201<br> <abbr title="Phone">P:</abbr> (123) 456-7890</address>
+				</div>
+				<div class="col-md-3 column">
+					<dl>
+						<dt>
+							Origin
+						</dt>
+						<dd>
+							This project was originally created by Danny Glover and David Schlessman at the University of Missouri.
+						</dd>
+
+					</dl>
+				</div>
+				<div class="col-md-3 column">
+					<strong>Contact Us:</strong>
+					<ul>
+						<li>
+							Danny Glover<br>555-555-5555<br>
+							dglover@gmail.com
+						</li>
+						<li>
+							David Schlessman<br>555-555-5555<br>
+							email@gmail.com
+						</li>
+											
+					</ul>
+				</div>
+				<div class="col-md-3 column">
+					<blockquote>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+						</p> <small>Someone famous <cite>Source Title</cite></small>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+</body>
+</html>
