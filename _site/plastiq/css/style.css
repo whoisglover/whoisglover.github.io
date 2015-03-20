@@ -1,0 +1,503 @@
+@font-face {
+font-family: 'MuseoSlab';
+src: url('../fonts/exljbris_-_museoslab-700-webfont.eot'); /* IE9 Compat Modes */
+src: url('../fonts/exljbris_-_museoslab-700-webfont.svg#MuseoSlab') format('svg'), /* Legacy iOS */
+     url('../fonts/exljbris_-_museoslab-700-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/exljbris_-_museoslab-700-webfont.woff') format('woff');
+font-weight: 700;
+}
+
+@font-face {
+font-family: 'MuseoSlab';
+src: url('../fonts/exljbris_-_museoslab-300-webfont.eot'); /* IE9 Compat Modes */
+src: url('../fonts/exljbris_-_museoslab-300-webfont.svg#MuseoSlab') format('svg'), /* Legacy iOS */
+     url('../fonts/exljbris_-_museoslab-300-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/exljbris_-_museoslab-300-webfont.woff') format('woff');
+font-weight: 300;
+}
+
+.dollar{
+  position: absolute;
+  top: 25px;
+  left: 33px;
+  width: initial;
+  height: initial;
+}
+.dollar-white{
+  display: none;
+}
+.dollar-grey{
+
+}
+.payee{
+  position: relative;
+  /*overflow: hidden;*/
+  height: 90px;
+  width: 1000px;
+  margin-top:15px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  -webkit-animation-name: payee-appear; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 2.5s; /* Chrome, Safari, Opera */
+  animation-name: payee-appear;
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+
+}
+
+.payee:hover{
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  bottom: 1px;
+
+}
+
+.payee:hover button{
+  color:#FFFFFF;
+  background-color: rgb(0, 161, 225);
+  -webkit-animation-name: dollar-hover; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+  animation-name: dollar-hover;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+
+.payee:hover .dollar-white{
+  display: block;
+}
+
+.payee:hover .dollar-grey{
+  display: none;
+}
+
+
+.payee-pic{
+  position: absolute;
+  display: block;
+  width: 90px;
+  height: 90px;
+
+}
+
+.payee button{
+  font-family: "MuseoSlab";
+  font-weight: 100;
+  font-size: 35px;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  right: 0;
+  display: inline;
+  border: none;
+  color: #EAEAEA;
+  border-left: 1px solid #EAEAEA;
+  background-color:white;
+}
+
+.payee button:hover{
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+
+
+/*Buttons*/
+.buttonStyle{
+  font-size: 18px;
+  font-family: "Arial";
+  line-height: 2;
+  background-color: #EAEAEA;
+  color: #B0B0B0;
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.activeButton{
+  font-size: 18px;
+  font-family: "Arial";
+  line-height: 2;
+  background-color: rgb(0, 161, 225);
+  color: white;
+  -webkit-animation-name: active-select; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 0.5s; /* Chrome, Safari, Opera */
+  animation-name: active-select;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+input:focus{
+  outline: none;
+}
+
+
+button:focus{
+  outline: none;
+}
+
+/* Business vs Person */
+.payeeTypeButton{
+  width: 105px;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/* Input Field */
+
+.addPayeeForm{
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05), inset 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+.payeeInput{
+  width:1201px;
+  height: 45px;
+  position: relative;
+  top:57px;
+  left:137px;
+  background: #FFFFFF;
+
+}
+.payeeInputField{
+  font-size: 18px;
+  font-family: "Arial";
+  line-height: 2;
+  width: 926px;
+  height: 45px;
+  border: none;
+  padding-left: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+.submitNewPayee{
+  font-size: 18px;
+  font-family: "Arial";
+  line-height: 2;
+  background-color: rgb(0, 161, 225);
+  color: white;
+  font-weight: 300;
+  width:65px;
+  height: 45px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.submitNewPayee img{
+  position: relative;
+  top:3px;
+}
+
+::-webkit-input-placeholder {color: rgb(204,204,204);}
+:-moz-placeholder { /* Firefox 18- */ color: rgb(204,204,204);}
+::-moz-placeholder {  /* Firefox 19+ */ color: rgb(204,204,204);}
+:-ms-input-placeholder {color: rgb(204,204,204);}
+
+
+
+
+
+/* Search Typeahead*/
+.search-results{
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.45);
+  left: 210px;
+  width: 425px;
+  margin-top: 5px;
+  z-index: 100;
+  background: white;
+}
+
+.individual-result{
+  width: 100%;
+  height: 80px;
+  font-family: 'Arial';
+  border-bottom: 1px solid #ECECEC;
+}
+
+.individual-result p{
+  padding-left: 30px;
+  margin: 0;
+}
+
+.individual-result:hover{
+  background-color: rgb(246, 246, 246);
+
+}
+.individual-result:hover .result-name{
+  color:rgb(0, 161, 225);
+}
+
+.top-buffer{
+  height: 5px;
+  margin: 0;
+  padding: 0;
+}
+.result-info{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.individual-result .result-name{
+  color: black;
+  font-size: 15px;
+}
+.individual-result .result-address{
+  font-size: 13px;
+  color: rgb(153, 153, 153);
+  padding-top: 8px;
+}
+
+.bottom-of-search{
+  font-size: 13px;
+  font-family: "Arial";
+  color: rgb(153, 153, 153);
+  line-height: 2.4;
+  height: 30px;
+  padding-left: 30px;
+  background-color: rgb(246,246,246);
+}
+.bottom-of-search p{
+
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+}
+
+.submit-img{
+  position: relative;
+  width: 21px;
+  top: 2px;
+  border-radius: 2px;
+}
+
+
+/* Borders */
+.rounded-right{
+  border-top-right-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+.rounded-left{
+  border-top-left-radius:3px;
+  border-bottom-left-radius:3px;
+}
+.rounded-bottom{
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+}
+
+.rounded{
+  border-radius: 3px;
+}
+
+/* Listing Out Selected Payees */
+.starter-payee {
+  color: blue;
+}
+.selected-payees-containter{
+  position: absolute;
+  top: 185px;
+  left: 237px;
+}
+
+.payee-text{
+  position: absolute;
+  margin-left: 90px;
+  padding-left: 30px;
+  color: rgb(40, 43, 45);
+}
+.payee-name{
+  font-size: 20px;
+  font-family: "MuseoSlab";
+  font-weight: 700;
+
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.payee-address{
+  font-size: 14px;
+  font-family: "MuseoSlab";
+  font-weight: 300;
+  color: rgb(40, 43, 45);
+  /*line-height: 1.1;*/
+  margin-top: 5px;
+
+}
+
+
+
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+    .selected-payees-containter{
+      width: 95%;
+      position: absolute;
+      /*margin:auto;*/
+      left: 5px;
+    }
+    .payee{
+      width: 100%;
+    }
+    .payee-address{
+      padding-right: 95px;
+    }
+
+    .payeeInput{
+      width: 100%;
+      left:0;
+    }
+    .payeeInputField{
+      width: 95%;
+      border-radius: 3px;
+      box-shadow: none;
+    }
+    .payeeTypeButton{
+      width:50%;
+    }
+    .submitNewPayee{
+      right:0;
+      width: 45px;
+    }
+    .search-results{
+      left:0;
+      width:100%;
+    }
+    .individual-result{
+      height:90px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .submitNewPayee{
+    width:100%;
+    position: static;
+    border-radius: 3px;
+  }
+  .selected-payees-containter{
+    margin-top: 20px;
+  }
+  .search-results{
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 450px) {
+    .payee-name{
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+}
+
+
+button.tooltips p{
+  font-family: 'Arial';
+  margin: 0;
+  padding: 0;
+  margin-top: 8px;
+}
+button.tooltips {
+  /*position: relative;*/
+  /*display: inline;*/
+}
+button.tooltips span {
+  /*padding-top: 20px;*/
+  font-size: 12px;
+  position: absolute;
+  width:120px;
+  color: #FFFFFF;
+  background: #000000;
+  height: 30px;
+  /*line-height: 30px;*/
+  text-align: center;
+  visibility: hidden;
+  border-radius: 4px;
+  animation-name: tip-bounce;
+  animation-iteration-count:infinite;
+}
+button.tooltips span:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  width: 0; height: 0;
+  border-top: 8px solid #000000;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  animation-name: tip-bounce;
+  animation-iteration-count:infinite;
+}
+button:hover.tooltips span {
+  visibility: visible;
+  opacity: 0.749;
+  bottom: 100px;
+  left: 50%;
+  margin-left: -60px;
+  z-index: 999;
+  -webkit-animation-name:tip-bounce;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-delay: 5s;
+  animation-name:tip-bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-delay: 5s;
+}
+
+
+/* Animations */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes dollar-hover {
+    from {background-color: white;}
+    to {background-color: rgb(0, 161, 225);}
+}
+@keyframes dollar-hover {
+    from {background-color: white;}
+    to {background-color: rgb(0, 161, 225);}
+}
+@-webkit-keyframes active-select {
+    from {background-color: #EAEAEA;}
+    to {background-color: rgb(0, 161, 225);}
+}
+@keyframes active-select {
+    from {background-color: #EAEAEA;}
+    to {background-color: rgb(0, 161, 225);}
+}
+
+@-webkit-keyframes new-payee-fired {
+  0%   {background-color: rgb(0,161,225);}
+  50%  {background-color: #45BF55; }
+  100% {background-color: rgb(0,161,225);}
+}
+@keyframes new-payee-fired {
+  0%   {background-color: rgb(0,161,225);}
+  50%  {background-color: #45BF55; }
+  100% {background-color: rgb(0,161,225);}
+}
+
+@-webkit-keyframes payee-appear {
+  from{opacity: 0;}
+  to{opacity: 1; }
+}
+@keyframes payee-appear {
+  from{opacity: 0;}
+  to{opacity: 1; }
+}
+
+@-webkit-keyframes tip-bounce{
+  0% {bottom: 100px;}
+  50%  {bottom: 102px; }
+  100% {bottom: 100px;}
+}
+
+@keyframes tip-bounce{
+   0%   {bottom: 100px;}
+  50%  {bottom: 102px; }
+  100% {bottom: 100px;}
+}
+
+

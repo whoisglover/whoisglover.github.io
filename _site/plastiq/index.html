@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+<head>
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text" src="sortable.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body ng-controller="StoreController as store">
+
+ <div class="payeeInput rounded" ng-controller="PanelController as panel">
+  <div class="addPayeeForm">
+    <button ng-click="selectType('business')" ng-class ="{activeButton: isSelected('business')}" class="buttonStyle payeeTypeButton rounded-left">Business</button><button ng-click="selectType('person')" ng-class ="{activeButton: isSelected('person')}" class="buttonStyle payeeTypeButton rounded-right">Person</button><input ng-model="newPayee.name" ng-change="searchGoogle()"ng-show="isSelected('business')" class="payeeInputField" placeholder="{{placeholder}}" ng-blur="placeholder=blurPlaceholder" ng-focus="placeholder=focusPlaceholder"></input><input ng-model="newPayee.name" ng-show="isSelected('person')" class="payeeInputField" placeholder="{{placeholder}}" ng-blur="placeholder=blurPlaceholder" ng-focus="placeholder=focusPlaceholder"></input>
+    <button ng-click="addPayee()" class="submitNewPayee rounded-right" style="position:absolute;"><img src="img/arrow.png" style="position:relative;" /></button></a>
+  </div>
+
+  <div class="search-results" ng-show="searchResults.length">
+
+    <div ng-repeat="rezult in searchResults | limitTo: 5" style="" class="individual-result" ng-click="searchResultClicked(rezult)">
+      <div class="top-buffer" ng-show="$first"></div>
+      <div class="result-info">
+        <p class="result-name" ng-bind-html="rezult.name |boldResult:newPayee.name">{{rezult.name}}</p>
+        <p class="result-address">{{rezult.formatted_address}}</p>
+      </div>
+    </div>
+    <div class="bottom-of-search rounded-bottom"><span>No match? That's ok. Enter any name and press the <img class="submit-img" src="img/submit.png"/> button.</span></div>
+  </div>
+</div>
+
+  <div class="selected-payees-containter ">
+    <div class="payee rounded starter-payee" ng-hide="store.payees.length" >
+      <img class="payee-pic" src="person.png"></img>
+      <div class="payee-text">
+        <p class="payee-name" style="color:#CECECE;">Your Payees Will be Displayed Here</p>
+        <p class="payee-address" style="color:#CECECE;">Start by Entering a Payee Above</p>
+      </div>
+    </div>
+    <div class="payee rounded"  ng-repeat="payee in store.payees | orderBy:'-addedOn'">
+      <img class="payee-pic"ng-src="{{payee.image}}">
+      <div class="payee-text">
+        <p class="payee-name">{{payee.name}}</p>
+        <p class="payee-address">{{payee.address}}</p>
+      </div>
+      <button class = "tooltips rounded-right" ng-show="payee.canPay"><span><p>Make a Payment</p></span><img class="dollar dollar-grey"src="img/dollar-grey.png"><img class="dollar dollar-white"src="img/dollar-white.png" ></button>
+    </div>
+  </div>
+
+
+    <div id="test-list"></div>
+
+  </body>
+  </html>
