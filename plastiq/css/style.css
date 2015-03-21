@@ -16,6 +16,14 @@ src: url('../fonts/exljbris_-_museoslab-300-webfont.svg#MuseoSlab') format('svg'
 font-weight: 300;
 }
 
+body{
+    background: url(../img/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .dollar{
   position: absolute;
   top: 25px;
@@ -30,6 +38,7 @@ font-weight: 300;
 
 }
 .payee{
+  background: white;
   position: relative;
   /*overflow: hidden;*/
   height: 90px;
@@ -41,13 +50,11 @@ font-weight: 300;
   animation-name: payee-appear;
   animation-duration: 2.5s;
   animation-timing-function: ease;
-
 }
 
 .payee:hover{
   box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
   bottom: 1px;
-
 }
 
 .payee:hover button{
@@ -68,13 +75,11 @@ font-weight: 300;
   display: none;
 }
 
-
 .payee-pic{
   position: absolute;
   display: block;
   width: 90px;
   height: 90px;
-
 }
 
 .payee button{
@@ -98,8 +103,6 @@ font-weight: 300;
 
 }
 
-
-
 /*Buttons*/
 .buttonStyle{
   font-size: 18px;
@@ -108,7 +111,6 @@ font-weight: 300;
   background-color: #EAEAEA;
   color: #B0B0B0;
   box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-
 }
 
 .activeButton{
@@ -123,10 +125,10 @@ font-weight: 300;
   animation-duration: 0.5s;
   animation-timing-function: ease-in;
 }
+
 input:focus{
   outline: none;
 }
-
 
 button:focus{
   outline: none;
@@ -194,10 +196,6 @@ button:focus{
 :-moz-placeholder { /* Firefox 18- */ color: rgb(204,204,204);}
 ::-moz-placeholder {  /* Firefox 19+ */ color: rgb(204,204,204);}
 :-ms-input-placeholder {color: rgb(204,204,204);}
-
-
-
-
 
 /* Search Typeahead*/
 .search-results{
@@ -273,7 +271,6 @@ button:focus{
   border-radius: 2px;
 }
 
-
 /* Borders */
 .rounded-right{
   border-top-right-radius:3px;
@@ -323,11 +320,9 @@ button:focus{
   font-family: "MuseoSlab";
   font-weight: 300;
   color: rgb(40, 43, 45);
-  /*line-height: 1.1;*/
   margin-top: 5px;
 
 }
-
 
 
 
@@ -392,7 +387,6 @@ button:focus{
 
 }
 
-
 button.tooltips p{
   font-family: 'Arial';
   margin: 0;
@@ -404,19 +398,16 @@ button.tooltips {
   /*display: inline;*/
 }
 button.tooltips span {
-  /*padding-top: 20px;*/
   font-size: 12px;
   position: absolute;
   width:120px;
   color: #FFFFFF;
   background: #000000;
   height: 30px;
-  /*line-height: 30px;*/
   text-align: center;
   visibility: hidden;
   border-radius: 4px;
-  animation-name: tip-bounce;
-  animation-iteration-count:infinite;
+
 }
 button.tooltips span:after {
   content: '';
@@ -428,8 +419,7 @@ button.tooltips span:after {
   border-top: 8px solid #000000;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
-  animation-name: tip-bounce;
-  animation-iteration-count:infinite;
+
 }
 button:hover.tooltips span {
   visibility: visible;
@@ -439,13 +429,13 @@ button:hover.tooltips span {
   margin-left: -60px;
   z-index: 999;
   -webkit-animation-name:tip-bounce;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 5s;
   -webkit-animation-iteration-count: infinite;
-  -webkit-animation-delay: 5s;
+  /*-webkit-animation-delay: 5s;*/
   animation-name:tip-bounce;
-  animation-duration: 0.5s;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-delay: 5s;
+  /*animation-delay: 5s;*/
 }
 
 
@@ -490,7 +480,10 @@ button:hover.tooltips span {
 
 @-webkit-keyframes tip-bounce{
   0% {bottom: 100px;}
-  50%  {bottom: 102px; }
+  5% {bottom: 102px;}
+  10% {bottom: 100px;}
+  90%  {bottom: 100px; }
+  95% {bottom: 102px; }
   100% {bottom: 100px;}
 }
 
